@@ -3,58 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Engineer Portfolio</title>
+    <title>John Doe | Data Engineer</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
             color: #333;
             margin: 0;
             padding: 0;
-            text-align: center;
+            line-height: 1.6;
+        }
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #1a1a1a;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 40px;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            transition: 0.3s;
+            padding: 10px 15px;
+        }
+        .navbar ul li a:hover {
+            color: #1db954;
+            border-bottom: 2px solid #1db954;
         }
         .container {
-            max-width: 900px;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            margin: 120px auto 50px;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
         h1, h2 {
-            color: #000;
+            color: #222;
         }
         .section {
-            margin: 20px 0;
+            margin: 60px 0;
+            padding-top: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
         }
         .card {
             background: #fff;
-            padding: 15px;
-            margin: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
-        .skills, .projects {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
-        .card p {
-            margin: 5px 0;
+        .card p, .card ul {
+            margin: 10px 0;
+            font-size: 14px;
+            color: #444;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li::before {
+            content: "✔️ ";
+            color: #1db954;
         }
         a {
-            color: #000;
+            color: #1db954;
             text-decoration: none;
             font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
     <div class="container">
         <h1>John Doe</h1>
         <h2>Data Engineer | Big Data | Cloud Solutions</h2>
         
-        <div class="section">
+        <div id="about" class="section card">
             <h3>About Me</h3>
             <ul>
                 <li>🚀 Experienced in building scalable data pipelines</li>
@@ -63,9 +128,9 @@
             </ul>
         </div>
         
-        <div class="section">
+        <div id="skills" class="section">
             <h3>Skills</h3>
-            <div class="skills">
+            <div class="grid">
                 <div class="card"><p>Python</p></div>
                 <div class="card"><p>SQL</p></div>
                 <div class="card"><p>Spark</p></div>
@@ -75,31 +140,41 @@
             </div>
         </div>
         
-        <div class="section">
+        <div id="projects" class="section">
             <h3>Projects</h3>
-            <div class="projects">
+            <div class="grid">
                 <div class="card">
                     <p><strong>Real-Time Data Pipeline</strong></p>
-                    <p>Tech: Python, Kafka, Spark</p>
+                    <ul>
+                        <li>Tech: Python, Kafka, Spark</li>
+                        <li>Processed streaming data efficiently</li>
+                    </ul>
                     <a href="#">GitHub</a>
                 </div>
                 <div class="card">
                     <p><strong>ETL Pipeline for Analytics</strong></p>
-                    <p>Tech: SQL, Airflow, AWS</p>
+                    <ul>
+                        <li>Tech: SQL, Airflow, AWS</li>
+                        <li>Automated data transformation</li>
+                    </ul>
                     <a href="#">GitHub</a>
                 </div>
             </div>
         </div>
         
-        <div class="section">
+        <div id="certifications" class="section">
             <h3>Certifications</h3>
-            <ul>
-                <li>✅ AWS Certified Data Analytics</li>
-                <li>✅ Google Cloud Data Engineer</li>
-            </ul>
+            <div class="grid">
+                <div class="card">
+                    <ul>
+                        <li>AWS Certified Data Analytics</li>
+                        <li>Google Cloud Data Engineer</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         
-        <div class="section">
+        <div id="contact" class="section card">
             <h3>Contact</h3>
             <p>📧 Email: johndoe@example.com</p>
             <p>🔗 <a href="#">LinkedIn</a> | 🖥 <a href="#">GitHub</a></p>
