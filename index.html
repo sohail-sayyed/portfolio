@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sohail Sayyed | Data Engineer</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* General Styles */
         body {
@@ -12,7 +14,7 @@
             color: #333;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         /* Navigation Bar */
@@ -46,7 +48,7 @@
             transition: 0.3s;
         }
         .navbar ul li a:hover {
-            color: #1db954;
+            color: #FFD700; /* Yellow hover */
         }
 
         /* Main Container */
@@ -66,6 +68,7 @@
         }
         h1 {
             margin-bottom: 10px;
+            font-size: 2.5rem;
         }
         h2 {
             color: #555;
@@ -73,8 +76,11 @@
             margin-bottom: 30px;
         }
         h3 {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-bottom: 20px;
+            border-bottom: 2px solid #FFD700; /* Yellow underline */
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
         /* Profile Image */
@@ -91,6 +97,7 @@
         .section {
             margin: 60px 0;
             padding-top: 20px;
+            text-align: left;
         }
         .section:first-of-type {
             margin-top: 40px;
@@ -110,15 +117,12 @@
             border-radius: 10px;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 1px solid #e0e0e0;
         }
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-        .card p, .card ul {
-            margin: 10px 0;
-            font-size: 14px;
-            color: #555;
+            border-color: #FFD700; /* Yellow border on hover */
         }
 
         /* Lists */
@@ -126,14 +130,55 @@
             list-style-type: none;
             padding: 0;
         }
+        ul li {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #555;
+        }
+        ul li::before {
+            content: "•";
+            color: #FFD700; /* Yellow bullet points */
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* Skills Icons */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .skill-item i {
+            font-size: 2rem;
+            color: #FFD700; /* Yellow icons */
+            transition: 0.3s;
+        }
+        .skill-item:hover i {
+            color: #ffcc00; /* Slightly darker yellow on hover */
+        }
+        .skill-item span {
+            font-size: 14px;
+            color: #555;
+        }
 
         /* Links */
         a {
             color: #1db954;
             text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
         }
         a:hover {
+            color: #FFD700; /* Yellow hover */
             text-decoration: underline;
         }
 
@@ -161,7 +206,7 @@
                 font-size: 1.2rem;
             }
             h3 {
-                font-size: 1.1rem;
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -180,7 +225,7 @@
     
     <div class="container">
         <!-- Replace the src attribute with your direct Google Drive image link -->
-        <img src="https://drive.google.com/uc?export=view&id=1AS-37tuzb2p8ILcELyr02wq4ljlA4VgO" alt="Sohail Sayyed" class="profile-image">
+        <img src="https://drive.google.com/uc?export=download&id=1AS-37tuzb2p8ILcELyr02wq4ljlA4VgO" alt="Sohail Sayyed" class="profile-image">
         <h1>Sohail Sayyed</h1>
         <h2>Data Engineer | Big Data | Cloud Solutions</h2>
         
@@ -188,22 +233,80 @@
         <div id="about" class="section card">
             <h3>About Me</h3>
             <ul>
-                <li>🚀 Experienced in building scalable data pipelines</li>
-                <li>🔧 Skilled in Python, SQL, Spark, and AWS</li>
-                <li>📊 Passionate about big data and analytics</li>
+                <li>🎯 Data Engineer with 3.6+ years of experience, specializing in cloud-based data solutions.</li>
+                <li>🌐 Worked on Azure, AWS, and GCP for scalable data architecture.</li>
+                <li>🛠 Proficient in SQL, PySpark, Python, and big data processing.</li>
+                <li>🚀 Built and optimized ETL pipelines to process large datasets efficiently.</li>
+                <li>📊 Passionate about transforming raw data into valuable insights via dashboards and analytics.</li>
+                <li>🔍 Experienced in workflow automation.</li>
+                <li>🔮 Future goal: Learning more about Kafka and Snowflake to enhance data engineering capabilities.</li>
             </ul>
         </div>
         
         <!-- Skills Section -->
         <div id="skills" class="section">
             <h3>Skills</h3>
-            <div class="grid">
-                <div class="card"><p>Python</p></div>
-                <div class="card"><p>SQL</p></div>
-                <div class="card"><p>Spark</p></div>
-                <div class="card"><p>AWS</p></div>
-                <div class="card"><p>Airflow</p></div>
-                <div class="card"><p>Hadoop</p></div>
+            <div class="skills-grid">
+                <!-- Python -->
+                <div class="skill-item">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+                <!-- PySpark -->
+                <div class="skill-item">
+                    <i class="fas fa-bolt"></i>
+                    <span>PySpark</span>
+                </div>
+                <!-- SQL -->
+                <div class="skill-item">
+                    <i class="fas fa-database"></i>
+                    <span>SQL</span>
+                </div>
+                <!-- AWS -->
+                <div class="skill-item">
+                    <i class="fab fa-aws"></i>
+                    <span>AWS</span>
+                </div>
+                <!-- GCP -->
+                <div class="skill-item">
+                    <i class="fab fa-google"></i>
+                    <span>GCP</span>
+                </div>
+                <!-- Airflow -->
+                <div class="skill-item">
+                    <i class="fas fa-wind"></i>
+                    <span>Airflow</span>
+                </div>
+                <!-- Databricks -->
+                <div class="skill-item">
+                    <i class="fas fa-database"></i>
+                    <span>Databricks</span>
+                </div>
+                <!-- Kafka -->
+                <div class="skill-item">
+                    <i class="fas fa-stream"></i>
+                    <span>Kafka</span>
+                </div>
+                <!-- Snowflake -->
+                <div class="skill-item">
+                    <i class="fas fa-snowflake"></i>
+                    <span>Snowflake</span>
+                </div>
+                <!-- Docker -->
+                <div class="skill-item">
+                    <i class="fab fa-docker"></i>
+                    <span>Docker</span>
+                </div>
+                <!-- GitHub -->
+                <div class="skill-item">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </div>
+                <!-- Git -->
+                <div class="skill-item">
+                    <i class="fab fa-git-alt"></i>
+                    <span>Git</span>
+                </div>
             </div>
         </div>
         
